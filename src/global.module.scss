@@ -1,0 +1,32 @@
+@import 'colors.module';
+@import 'layout.module';
+
+html, 
+body {
+    margin: 20px;
+    box-sizing: content-box;
+}
+
+p {
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+
+    &-center {
+        justify-content: center;
+    }
+
+    &-right {
+        justify-content: right;
+    }
+}
+
+.text {
+    &-align {
+        &-center {
+            text-align: center;
+        }
+    }
+}

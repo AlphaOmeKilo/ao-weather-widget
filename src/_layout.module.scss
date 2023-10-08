@@ -1,0 +1,63 @@
+@use "sass:math";
+
+@for $i from 0 through 10 {
+  .pa-#{$i} {
+    padding: #{math.div($i, 4)}rem !important;
+  }
+
+  .pr-#{$i} {
+    padding-right: #{math.div($i, 4)}rem !important;
+  }
+
+  .pl-#{$i} {
+    padding-left: #{math.div($i, 4)}rem !important;
+  }
+
+  .pt-#{$i} {
+    padding-top: #{math.div($i, 4)}rem !important;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: #{math.div($i, 4)}rem !important;
+  }
+
+  .px-#{$i} {
+    padding-right: #{math.div($i, 4)}rem !important;
+    padding-left: #{math.div($i, 4)}rem !important;
+  }
+
+  .py-#{$i} {
+    padding-top: #{math.div($i, 4)}rem !important;
+    padding-bottom: #{math.div($i, 4)}rem !important;
+  }
+
+  .ma-#{$i} {
+    margin: #{math.div($i, 4)}rem !important;
+  }
+
+  .mr-#{$i} {
+    margin-right: #{math.div($i, 4)}rem !important;
+  }
+
+  .ml-#{$i} {
+    margin-left: #{math.div($i, 4)}rem !important;
+  }
+
+  .mt-#{$i} {
+    margin-top: #{math.div($i, 4)}rem !important;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: #{math.div($i, 4)}rem !important;
+  }
+
+  .mx-#{$i} {
+    margin-right: #{math.div($i, 4)}rem !important;
+    margin-left: #{math.div($i, 4)}rem !important;
+  }
+
+  .my-#{$i} {
+    margin-top: #{math.div($i, 4)}rem !important;
+    margin-bottom: #{math.div($i, 4)}rem !important;
+  }
+}
