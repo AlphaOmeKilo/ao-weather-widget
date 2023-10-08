@@ -1,0 +1,61 @@
+.widget {
+    width: 200px;
+    max-width: 100%;
+    border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 12px;
+    background-color: var(--ww-white);
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+    &-city {
+        font-size: 24px;
+    }
+
+    &-temp {
+        font-size: 36px;
+    }
+
+    &-controls {
+        .refresh {
+            width: 20px;
+            cursor: pointer;
+        } 
+    }
+
+    &.code-2 {
+        background-color: var(--ww-thunderstorm);
+        color: var(--ww-white);
+    }
+
+    &.code-3 {
+        background-color: var(--ww-drizzle);
+        color: var(--ww-black);
+    }
+
+    &.code-5 {
+        background-color: var(--ww-rain);
+        color: var(--ww-black);
+    }
+
+    &.code-6 {
+        background-color: var(--ww-snow);
+        color: var(--ww-black);
+    }
+
+    &.code-7 {
+        background-color: var(--ww-atmosphere);
+        color: var(--ww-black);
+    }
+
+    &.code-800 {
+        background-color: var(--ww-clear);
+        color: var(--ww-black);
+    }
+
+    &.code-8 {
+        background-color: var(--ww-clouds);
+        color: var(--ww-black);
+    }
+}
+

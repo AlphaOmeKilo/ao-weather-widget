@@ -1,0 +1,53 @@
+$white: #FFFFFF;
+$black: #2D2D2D;
+$thunderstorm: #9098A1;
+$drizzle: #C4D3DF;
+$rain: #7179A1;
+$snow: #FFFAFA;
+$atmosphere: #EAE2DD;
+$clear: #A4DAFF;
+$clouds: #C5C4C1;
+
+:root {
+  --ww-white: #FFFFFF;
+  --ww-black: #2D2D2D;
+  --ww-thunderstorm: #9098A1;
+  --ww-drizzle: #C4D3DF;
+  --ww-rain: #7179A1;
+  --ww-snow: #FFFAFA;
+  --ww-atmosphere: #EAE2DD;
+  --ww-clear: #A4DAFF;
+  --ww-clouds: #C5C4C1;
+}
+
+$colors: (
+  "black": $black, 
+  "white": $white,
+  "thunderstorm": $thunderstorm,
+  "drizzle": $drizzle,
+  "rain": $rain,
+  "snow": $snow,
+  "atmosphere": $atmosphere,
+  "clear": $clear,
+  "clouds": $clouds
+);
+
+@each $name, $hex in $colors {
+  .#{$name} {
+    background-color: #{$hex};
+
+    &--text {
+      color: #{$hex} 
+    }
+
+    &--text > * {
+      color: #{$hex} 
+    }
+
+    &--border {
+      border-color: #{$hex};
+      border-width: 0.125rem;
+	    border-style: solid;
+    }
+  }
+}
