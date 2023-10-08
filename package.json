@@ -1,10 +1,10 @@
 {
   "name": "ao-weather-widget",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "A weather widget to get current weather is global cities",
   "author": "AlphaOmeKilo",
   "license": "MIT",
-  "repository": "AlphaOmeKilo/ao-weather-widget",
+  "repository": "https://github.com/AlphaOmeKilo/ao-weather-widget",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -24,10 +24,10 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
+    "axios": "^1.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "sass": "^1.69.0",
-    "axios": "^1.5.1"
+    "sass": "^1.69.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-unicode-property-regex": "^7.18.6",
