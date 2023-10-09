@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import WeatherWidget from '.'
 
-describe('ExampleComponent', () => {
+describe('WeatherWidget', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(WeatherWidget).toBeTruthy()
   })
 })
