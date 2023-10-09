@@ -1,6 +1,6 @@
 .widget {
     width: 200px;
-    max-width: 100%;
+    min-width: 140px;
     border-radius: 12px;
     padding: 12px;
     background: var(--ww-white);
@@ -18,7 +18,11 @@
         border-radius: 12px;
         background-color: var(--ww-clouds);
         pointer-events: none;
-        transition: opacity 0.5s;
+        transition: opacity 0.25s;
+    }
+
+    &.fill {
+        width: 100%;
     }
 
     &.refreshing {        
@@ -28,22 +32,28 @@
         }
 
         .widget-blur {
-            filter: blur(20px);
+            filter: blur(50px);
         }        
     }
 
     &-blur {
-        transition: filter 0.5s;
+        transition: filter 0.25s;
         position: relative;
         z-index: 1000;
     }
 
     &-city {
         font-size: 24px;
+        font-weight: 700;
     }
 
     &-temp {
         font-size: 36px;
+    }
+
+    &-error {
+        min-height: 20px;
+        font: var(--ww-black);
     }
 
     &-controls {
@@ -55,7 +65,14 @@
         } 
     }
 
+    .img-container {
+        height: 50px;
+        width: 50px;
+        margin: 0 auto;
+    }
+
     img {
+
         &.refreshing {
             -webkit-animation:spin 1s ease infinite;
             -moz-animation:spin 1s ease infinite;
@@ -69,7 +86,7 @@
 
     &.error {
         background-color: var(--ww-thunderstorm);
-        color: var(--ww-white);
+        color: var(--ww-black);
         background: linear-gradient(336deg, var(--ww-error) 0%, var(--ww-error) 50%, var(--ww-error) 100%);
     }
 

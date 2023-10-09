@@ -9,29 +9,32 @@ export const WeatherWidget = (props) => {
   const [apiToken] = useState(props.apiToken)
   const [splitCode, setSplitCode] = useState(0)
   const [errorMsg, setErrorMsg] = useState(null)
-  const [refreshing, setRefreshing] = useState(false)
+  const [refreshing, setRefreshing] = useState(true)
+  const [fill] = useState(props.fill)
 
   /**
    * Call the openWeather API to get the current weather for the given
    * city using the apiToken provided.
    */
-  const getWeather = (firstLoad) => {
-    if (!firstLoad) setRefreshing(true)
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiToken}&units=metric`
-      )
-      .then((res) => {
-        setData(res.data)
-      })
-      .catch((e) => {
-        setErrorMsg(e.response?.data?.message || 'Unkown error')
-      })
-      .finally(() => {
-        setTimeout(() => {
-          setRefreshing(false)
-        }, 1000)
-      })
+  const getWeather = () => {
+    setRefreshing(true)
+    setTimeout(() => {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiToken}&units=metric`
+        )
+        .then((res) => {
+          setData(res.data)
+        })
+        .catch((e) => {
+          setErrorMsg(e.response?.data?.message || 'Unkown error')
+        })
+        .finally(() => {
+          setTimeout(() => {
+            setRefreshing(false)
+          }, 500)
+        })
+    }, 500)
   }
 
   /**
@@ -49,7 +52,7 @@ export const WeatherWidget = (props) => {
   }
 
   const capitaliseFirstLetter = (str) => {
-    return str[0].toUpperCase() + str.slice(1)
+    return str ? str[0].toUpperCase() + str.slice(1) : 'N/A'
   }
 
   // Whenever data changes, we need to get the first digit of
@@ -69,14 +72,16 @@ export const WeatherWidget = (props) => {
   }, [data])
 
   useEffect(() => {
-    getWeather(true)
+    getWeather()
   }, [])
 
   return (
     <div
       className={`${props.className} ${styles.widget} ${styles[splitCode]} ${
-        styles[errorMsg ? 'error' : '']
-      } ${refreshing ? styles.refreshing : ''}`}
+        fill ? styles.fill : ''
+      } ${styles[errorMsg ? 'error' : '']} ${
+        refreshing ? styles.refreshing : ''
+      }`}
     >
       <div
         className={`${styles['widget-controls']} ${styles.flex} ${styles['flex-right']}`}
@@ -96,14 +101,16 @@ export const WeatherWidget = (props) => {
         <p className={`${styles['mt-1']} ${styles['widget-blur']}`}>
           {data ? data.weather[0].description : 'N/A'}
         </p>
-        {data ? (
-          <img
-            className={`${styles['widget-blur']}`}
-            src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`}
-          />
-        ) : (
-          <div />
-        )}
+        <div className={`${styles['img-container']}`}>
+          {data ? (
+            <img
+              className={`${styles['widget-blur']}`}
+              src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`}
+            />
+          ) : (
+            <div />
+          )}
+        </div>
 
         <p
           className={`${styles['widget-temp']} ${styles['widget-blur']} ${styles['my-10']}`}
@@ -111,7 +118,9 @@ export const WeatherWidget = (props) => {
           {data ? `${data.main.temp}` : 'N/A'}&deg;
         </p>
 
-        <p className={`${styles['white--text']} ${styles['widget-blur']}`}>
+        <p
+          className={`${styles['widget-error']} ${styles['white--text']} ${styles['widget-blur']}`}
+        >
           {errorMsg}
         </p>
       </div>
