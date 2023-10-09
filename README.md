@@ -1,6 +1,6 @@
 # ao-weather-widget
 
-> A weather widget to get current weather is global cities
+> A weather widget to get current weather in global cities
 
 [![NPM](https://img.shields.io/npm/v/ao-weather-widget.svg)](https://www.npmjs.com/package/ao-weather-widget) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -41,6 +41,7 @@ I made the choice to develop this component and release it as a fully fledged NP
 ### SCSS
 
 SCSS was used to build the styles for the WeatherWidget. The additional complexities that SCSS offers over standard CSS allows me to quickly build a set of classes for layouts, spacings and colors that be used site wide with ease.
+The SCSS classes have been stored in modules to avoid interaction with any styles defined in parent applications.
 
 ### Standard JavaScript
 
