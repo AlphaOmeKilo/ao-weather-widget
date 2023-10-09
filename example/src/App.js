@@ -5,10 +5,10 @@ import 'ao-weather-widget/dist/index.css'
 
 const App = () => {
   return <div className='flex'>
-    <WeatherWidget city="London" apiToken="9a08c0bf4e4d59790f3633162aaf8f92"/>
-    <WeatherWidget city="sevilla" apiToken="9a08c0bf4e4d59790f3633162aaf8f92"/>
-    <WeatherWidget city="Paris" apiToken="9a08c0bf4e4d59790f3633162aaf8f92"/>
-    <WeatherWidget city="Vancouver" apiToken="9a08c0bf4e4d59790f3633162aaf8f92"/>
+    <WeatherWidget className='mr-4' city="Test" apiToken="9a08c0bf4e4d59790f3633162aaf8f92"/>
+    <WeatherWidget className='mr-4' city="sevilla" apiToken="9a08c0bf4e4d59790f3633162aaf8f92"/>
+    <WeatherWidget className='mr-4' city="Paris" apiToken="9a08c0bf4e4d59790f3633162aaf8f92"/>
+    <WeatherWidget className='mr-4' city="Vancouver" apiToken="9a08c0bf4e4d59790f3633162aaf8f92"/>
     <WeatherWidget city="Bristol" apiToken="9a08c0bf4e4d59790f3633162aaf8f92"/>
   </div>
 }

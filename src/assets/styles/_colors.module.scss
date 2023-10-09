@@ -1,5 +1,6 @@
 $white: #FFFFFF;
 $black: #2D2D2D;
+$error: #ff3333;
 $thunderstorm: #9098A1;
 $drizzle: #C4D3DF;
 $rain: #7179A1;
@@ -7,10 +8,12 @@ $snow: #FFFAFA;
 $atmosphere: #EAE2DD;
 $clear: #A4DAFF;
 $clouds: #C5C4C1;
+$sun: #FDA718;
 
 :root {
   --ww-white: #FFFFFF;
   --ww-black: #2D2D2D;
+  --ww-error: #ff3333;
   --ww-thunderstorm: #9098A1;
   --ww-drizzle: #C4D3DF;
   --ww-rain: #7179A1;
@@ -18,18 +21,21 @@ $clouds: #C5C4C1;
   --ww-atmosphere: #EAE2DD;
   --ww-clear: #A4DAFF;
   --ww-clouds: #C5C4C1;
+  --ww-sun: #FDA718;
 }
 
 $colors: (
   "black": $black, 
   "white": $white,
+  "error": $error,
   "thunderstorm": $thunderstorm,
   "drizzle": $drizzle,
   "rain": $rain,
   "snow": $snow,
   "atmosphere": $atmosphere,
   "clear": $clear,
-  "clouds": $clouds
+  "clouds": $clouds,
+  "sun": $sun
 );
 
 @each $name, $hex in $colors {
