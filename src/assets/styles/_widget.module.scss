@@ -1,7 +1,9 @@
 .widget {
     width: 200px;
+    height: 300px;
     min-width: 140px;
     border-radius: 12px;
+    box-sizing: border-box;
     padding: 12px;
     background: var(--ww-white);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
@@ -23,6 +25,7 @@
 
     &.fill {
         width: 100%;
+        min-height: 100%;
     }
 
     &.refreshing {        
@@ -57,7 +60,10 @@
     }
 
     &-controls {
-        position: relative;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        width: calc(100% - 24px);
         z-index: 1000;
         .refresh {
             width: 20px;

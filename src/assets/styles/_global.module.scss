@@ -23,6 +23,10 @@ p {
     &-right {
         justify-content: right;
     }
+
+    &-column {
+        flex-direction: column;
+    }
 }
 
 .text {

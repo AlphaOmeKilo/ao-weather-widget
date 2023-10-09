@@ -18,37 +18,34 @@ export const WeatherWidget = (props) => {
    */
   const getWeather = () => {
     setRefreshing(true)
-    setTimeout(() => {
-      axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiToken}&units=metric`
-        )
-        .then((res) => {
-          setData(res.data)
-        })
-        .catch((e) => {
-          setErrorMsg(e.response?.data?.message || 'Unkown error')
-        })
-        .finally(() => {
-          setTimeout(() => {
-            setRefreshing(false)
-          }, 500)
-        })
-    }, 500)
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiToken}&units=metric`
+      )
+      .then((res) => {
+        setData(res.data)
+      })
+      .catch((e) => {
+        setErrorMsg(e.response?.data?.message || 'Unkown error')
+      })
+      .finally(() => {
+        setTimeout(() => {
+          setRefreshing(false)
+        }, 250)
+      })
   }
 
   /**
-   * Get the first digit of a number
+   * Get the first digit of a number.
+   * 754 returns 7 for example
    * @param {number} n
    * @returns {number}
    */
   const getFirstDigit = (n) => {
     // Find total number of digits - 1
     const digits = Math.floor(Math.log(n) / Math.log(10))
-    // Find first digit
-    n = Math.floor(n / Math.pow(10, digits))
     // Return first digit
-    return n
+    return Math.floor(n / Math.pow(10, digits))
   }
 
   const capitaliseFirstLetter = (str) => {
@@ -71,6 +68,7 @@ export const WeatherWidget = (props) => {
     )
   }, [data])
 
+  // Trigger get Weather on mount
   useEffect(() => {
     getWeather()
   }, [])
@@ -81,7 +79,7 @@ export const WeatherWidget = (props) => {
         fill ? styles.fill : ''
       } ${styles[errorMsg ? 'error' : '']} ${
         refreshing ? styles.refreshing : ''
-      }`}
+      }  ${styles.flex} ${styles['flex-column']} ${styles['flex-center']}`}
     >
       <div
         className={`${styles['widget-controls']} ${styles.flex} ${styles['flex-right']}`}
@@ -113,7 +111,7 @@ export const WeatherWidget = (props) => {
         </div>
 
         <p
-          className={`${styles['widget-temp']} ${styles['widget-blur']} ${styles['my-10']}`}
+          className={`${styles['widget-temp']} ${styles['widget-blur']} ${styles['mt-10']}`}
         >
           {data ? `${data.main.temp}` : 'N/A'}&deg;
         </p>
