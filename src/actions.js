@@ -1,0 +1,8 @@
+export const SET_CITY = 'SET_CITY'
+export const SET_UNITS = 'SET_UNITS'
+export const SET_DATA = 'SET_DATA'
+export const SET_REFRESHING = 'SET_REFRESHING'
+export const SET_SPLIT_CODE = 'SET_SPLIT_CODE'
+export const SET_SHOW_SETTINGS = 'SET_SHOW_SETTINGS'
+export const SET_ERROR_MSG = 'SET_ERROR_MSG'
+export const UPDATE_SETTINGS = 'UPDATE_SETTINGS'

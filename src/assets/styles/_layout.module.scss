@@ -1,5 +1,7 @@
 @use "sass:math";
 
+
+
 @for $i from 0 through 10 {
   .pa-#{$i} {
     padding: #{math.div($i, 4)}rem !important;

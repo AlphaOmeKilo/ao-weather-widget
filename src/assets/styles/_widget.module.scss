@@ -41,7 +41,7 @@
     &-blur {
         transition: filter 0.25s;
         position: relative;
-        z-index: 1000;
+        z-index: 800;
     }
 
     &-city {
@@ -65,8 +65,10 @@
         left: 12px;
         width: calc(100% - 24px);
         z-index: 1000;
-        .refresh {
+
+        img {
             width: 20px;
+            opacity: 0.8;
             cursor: pointer;
         } 
     }
